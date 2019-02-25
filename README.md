@@ -1,48 +1,48 @@
-# Feed Reader Testing in Jasmine.js
-This is a project to test a feedReader code in Jasmine library
+# Project Overview
 
-The project base code is from Udacity which has contained the first test "RSS Feeds".
-
-# How to run the app locally
-
-## Quick start
-A simple way to go is to clone or download this git repository to your local machine. Locate to the repository folder and  open `index.html`, you should be able to see the feeds load.
-
-## Run the app on a server
-1. clone this repository to your project folder
-2. ensure you've installed node.js. For more details, please refer to [node.js official website](https://nodejs.org/en/)
-3. locate to the project folder root `cd project-folder-name`
-4. open terminal, install `http-server` in npm with command line `npm install -g http-server`
-5. quick launch an server for this app `http-server`
-6. now you can visit `http://127.0.0.1:8080` to view your app
-
-You can find more available options for the http-sever configuration on npm package page of [http-server](https://www.npmjs.com/package/http-server).
+In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
 
-# About the tests
+## Why this Project?
 
-Here are the other test suites written in Jasmine.js by Millie Lin.
+Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
 
-## Test Suite "The Menu"
-By inspecting the menu toggle events in Chrome dev tools, I found the program show and hide the slide menu by toggling class 'menu-hidden' on `<body>`.
+Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
 
-By default, the body should be with class menu-hidden.
-By using jQuery to select the BODY element and get the class with `attr`. So that the test should detect if the `body` tag contains 'menu-hidden' to check if the toggleClass function runs properly.
 
-The click() event is used to check if the 'menu-hidden' class exists to ensure the function goes well.   
+## What will I learn?
 
-## Test Suite "Initial Entries"
-In `app.js`, it runs loadFeed() to load the data from each feed. If the feed load successfully, it will render the HTML inside the feed container `DIV.feed`.
+You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
 
-Since `.entry` is an rendered element when feed successfully initialised, by checking if the .feed HTML after loading can see if the entries has been loaded properly.
 
-The loadFeed() is asynchronous so that the test should run beforeEach() and done() to ensure the loadFeed() runs in the test.
+## How will this help my career?
 
-By calling `loadFeed(0, function(...))` the test load the first feed which contains initial entries for detection.
+* Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
+* Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
-## Test Wuite "New Feed Selection"
-There are more than one feed in the allFeeds. The loadFeed() function load specified feed with the id(index).
 
-The second feed content should be different from the first feed. So that by comparing the rendered HTML content, we can check if the program loads a different feed with the function instead the same one.
+# How will I complete this project?
 
-The HTML can be get in jQuery .html() function.
+Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
+
+1. Take the JavaScript Testing [course](https://www.udacity.com/course/ud549)
+2. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
+3. Review the functionality of the application within your browser.
+4. Explore the application's HTML (**./index.html**), CSS (**./css/style.css**) and JavaScript (**./js/app.js**) to gain an understanding of how it works.
+5. Explore the Jasmine spec file in **./jasmine/spec/feedreader.js** and review the [Jasmine documentation](http://jasmine.github.io).
+6. Edit the `allFeeds` variable in **./js/app.js** to make the provided test fail and see how Jasmine visualizes this failure in your application.
+7. Return the `allFeeds` variable to a passing state.
+8. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.
+9. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.
+10. Write a new test suite named `"The menu"`.
+11. Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
+12. Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display when clicked and does it hide when clicked again.
+13. Write a test suite named `"Initial Entries"`.
+14. Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
+15. Write a test suite named `"New Feed Selection"`.
+16. Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
+17. No test should be dependent on the results of another.
+18. Callbacks should be used to ensure that feeds are loaded before they are tested.
+19. Implement error handling for undefined variables and out-of-bound array access.
+20. When complete - all of your tests should pass.
+21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
